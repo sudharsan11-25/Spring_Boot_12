@@ -22,7 +22,7 @@ pipeline {
         stage('Push Docker') {
     steps {
         withCredentials([usernamePassword(
-            credentialsId: 'dockerhub-creds',
+            credentialsId: 'spring_boot',
             usernameVariable: 'DOCKER_USER',
             passwordVariable: 'DOCKER_PASS'
         )]) {
