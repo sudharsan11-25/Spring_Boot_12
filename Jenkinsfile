@@ -7,12 +7,6 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                git url: 'https://github.com/sudharsan11-25/Spring_Boot_12.git', branch: 'main'
-            }
-        }
-
         stage('Build Maven') {
             steps {
                 bat 'mvn clean package'
@@ -35,6 +29,15 @@ pipeline {
             steps {
                 bat 'kubectl apply -f deployment.yaml'
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully'
+        }
+        failure {
+            echo 'Pipeline failed'
         }
     }
 }
