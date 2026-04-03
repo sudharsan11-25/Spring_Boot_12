@@ -9,7 +9,7 @@ pipeline {
 
         stage('Clone') {
             steps {
-                git url: 'https://github.com/your-repo-link.git', branch: 'main'
+                git url: 'https://github.com/sudharsan11-25/Spring_Boot_12.git', branch: 'main'
             }
         }
 
